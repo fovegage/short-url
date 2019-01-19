@@ -1,0 +1,132 @@
+/**{*/
+    /*font-family: KaiTi;*/
+/*}*/
+.navbar-style{
+    background-color: #44B549;
+}
+a.brand-style{
+    font-size: 22px;
+    /*font-weight: bold;*/
+    color: white!important;
+}
+.link-style{
+    color: #00ABA9!important;
+}
+.collapse ul li a{
+    font-size: 16px;
+}
+.collapse ul li a:hover{
+    color: #00ABA9!important;
+}
+.collapse-style{
+    margin-left: 30px;
+}
+.card{
+    margin-top: 20px;
+    /*height: 400px;*/
+}
+.top-style{
+    width: 200px;
+    height: 200px;
+    margin-left: 25px;
+}
+
+::-webkit-scrollbar {
+    width: 4px;
+    padding-right: 4px;
+    background-color: white;
+    /*其他样式，比如圆角等*/
+}
+/*滑块样式*/
+::-webkit-scrollbar-thumb {
+    -webkit-border-radius: 4px;
+    border-radius: 4px;
+    background-color: #00ABA9;
+}
+/*当前窗口失去焦点时的滑块样式*/
+::-webkit-scrollbar-thumb:window-inactive {
+    background-color: #00ABA9;
+}
+.widget .widget-title{
+    color: #6e7173;
+    line-height: 2.7;
+    margin-top: 0;
+    font-size: 16px;
+    border-bottom: 1px solid #ddd;
+    display: block;
+    font-weight: 400;
+}
+.power{
+    display:none;
+}
+.power txt-right{
+    display:none;
+}
+#footer{
+    margin-top: 30px;
+}
+.footer-span-style{
+    margin-left: 600px;
+}
+.footer-style{
+    background-color: #5bc0de;
+}
+section#id-footer{
+    width: 100%;
+    height: 100%;
+    padding: 20px 0px;
+    background-color: #404343;
+    color: white;
+    margin-top: 30px;
+}
+.right-style{
+    color: white;
+    line-height: 20px;
+}
+.right-style:hover{
+    color: darkred;
+}
+.title-style{
+    margin-top: 20px;
+    font-size: 18px;
+    text-align: center;
+}
+.input-style{
+    margin-top: 20px;
+}
+.first-style{
+    margin-left: 200px
+}
+.second-style{
+    margin-left: 20px;
+}
+.row-style{
+    margin-top: 20px
+}
+.card-title-style, .header-style{
+    margin-top: 20px;
+    font-size: 20px;
+}
+/*.cart-style{*/
+    /*margin-top: -20px;*/
+/*}*/
+.left-style{
+    margin-bottom: 20px;
+}
+.p-style{
+    margin-left: 10px;
+}
+.pp-style{
+    padding-bottom: -30px;
+}
+/*.con-first{*/
+    /*background-color: white;*/
+/*}*/
+.con-span-style{
+    margin-left: 860px;
+    font-size: 16px;
+}
+.con-p-first{
+    margin-top: 20px;
+    font-size: 18px;
+}

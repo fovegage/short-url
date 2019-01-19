@@ -1,0 +1,122 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>通付 - 收银台</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link rel="stylesheet" href="https://cdn.staticfile.org/twitter-bootstrap/4.1.0/css/bootstrap.min.css">
+    <link rel="stylesheet" href="{{ static_url("css/style.css") }}">
+    <link href="//netdna.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css" rel="stylesheet">
+    <link rel="stylesheet" href="https://source.eapay.cc/static/layui/css/modules/layer/default/layer.css?v=3.0.11110s">
+    <script src="https://cdn.staticfile.org/jquery/3.2.1/jquery.min.js"></script>
+    <script src="https://cdn.staticfile.org/popper.js/1.12.5/umd/popper.min.js"></script>
+    <script src="https://cdn.staticfile.org/twitter-bootstrap/4.1.0/js/bootstrap.min.js"></script>
+
+</head>
+<body>
+<!--导航-->
+<nav class="navbar navbar-expand-lg navbar-dark navbar-style">
+    <div class="container">
+        <a class="navbar-brand brand-style" href="/">通付 - 收银台</a>
+    </div>
+</nav>
+<!--内容-->
+<div class="container">
+    <div class="row">
+        <div class="col-md-12">
+            <div class="page-header header-style">
+                <i class="fa fa-shopping-cart fa-lg"></i>
+                <span>订单信息</span>
+                <span class="con-span-style">总计：<span
+                        style="font-size: 20px; color: #44B549">{{ fee }}</span>&nbsp;元</span>
+                <hr class="my-2">
+            </div>
+        </div>
+    </div>
+    <div class="row">
+        <div class="col-md-4">
+            <p class="con-p-first">订单编号</p>
+            <p>{{ orderid }}</p>
+        </div>
+        <div class="col-md-4">
+            <p class="con-p-first">商品名称</p>
+            <p>{{ subject }}</p>
+        </div>
+        {#        <div class="col-md-4">#}
+        {#            <p class="con-p-first">商品描述</p>#}
+        {#            <p>{{ subject }}</p>#}
+        {#        </div>#}
+    </div>
+    <div class="row">
+        <div class="col-md-12">
+            <div class="page-header header-style">
+                <i class="fa fa-credit-card fa-lg"></i>
+                <span>订单支付</span>
+                <hr class="my-2">
+            </div>
+        </div>
+    </div>
+    <div class="row">
+        <div class="col-md-12">
+            <ul class="list-group">
+                <a class="thumbnail text-center" id="payMethod-1">
+                    <img id="replace" src="{{ code }}" style="width: 200px; height: 200px;">
+                </a>
+            </ul>
+        </div>
+    </div>
+    <hr class="my-2">
+
+
+</div>
+<!--版权-->
+
+<div class="container-fluid fixed-bottom">
+    <div class="row">
+        <section id="id-footer">
+            <div class="container">
+                <div class="row">
+                    <span>Copyright &copy; 2018 通付. All Rights Reserved.</span>
+                    <span class="footer-span-style">通付 - 为个人网站助力！</span>
+                </div>
+            </div>
+        </section>
+    </div>
+</div>
+</body>
+<script type="text/javascript">
+function f() {
+    if ("WebSocket" in window) {
+        // 打开一个 web socket
+        var ws = new WebSocket("wss://pay.gaozhe.top/query");
+        ws.onopen = function () {
+            // Web Socket 已连接上，使用 send() 方法发送数据
+            var qr_id = {{ id }};
+            ws.send(qr_id);
+        };
+        ws.onmessage = function (evt) {
+            var responseObj = JSON.parse(evt.data);
+
+             if (responseObj['flag'] === "TRADE_PAID") {
+                document.getElementById('replace').src = "https://img.yzcdn.cn/upload_files/2017/11/25/FnFa-_giR389G_rtBBWspFw8esc7.png"; 
+                alert("支付成功，即将跳转!!!");
+                window.location.href='http://www.baidu.com';
+            }
+        };
+    }
+    else {
+        // 浏览器不支持 WebSocket
+        alert("您的浏览器不支持 WebSocket!");
+
+    }
+}
+  var timesRun = 0;
+var interval = setInterval(function(){
+timesRun += 1;
+if(timesRun === 50){
+clearInterval(interval);
+}
+f();
+}, 2000);
+</script>
+</html>
