@@ -1,7 +1,7 @@
 # -*- coding: utf-8 -*-
 from .BaseHandler import BaseHandler
 from .SaveOrder import Judge
-
+from settings import url
 
 class Pay(BaseHandler):
 
@@ -18,6 +18,6 @@ class Pay(BaseHandler):
             tid = Judge(qr_id).GetTid()
             self.db.payinfo.update_one({'qr_id': qr_id}, {'$set': {'tid': tid}})
             self.render('pay.html', subject=subject, orderid=out_order_id, fee=fee, id=qr_id, body=body,
-                        code=qr_code, codeid=pay_id)
+                        code=qr_code, codeid=pay_id, url=url)
         else:
             self.write({'error': -1, 'status': "pay_id i'not exist"})
