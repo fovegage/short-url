@@ -4,10 +4,6 @@
 
 **基于有赞云支付和有赞微小店实现个人收款支付接口解决方案 .**
 
-[![GitHub issues](https://img.shields.io/github/issues/thundernet8/YouzanPayPortal.svg)](https://github.com/thundernet8/YouzanPayPortal/issues)
-[![GitHub forks](https://img.shields.io/github/forks/thundernet8/YouzanPayPortal.svg)](https://github.com/thundernet8/YouzanPayPortal/network)
-[![GitHub stars](https://img.shields.io/github/stars/thundernet8/YouzanPayPortal.svg)](https://github.com/thundernet8/YouzanPayPortal/stargazers)
-[![dependency status](https://img.shields.io/david/thundernet8/YouzanPayPortal.svg?maxAge=3600&style=flat)](https://david-dm.org/thundernet8/YouzanPayPortal)
 [![Build Status](https://travis-ci.org/thundernet8/YouzanPayPortal.svg?branch=master)](https://travis-ci.org/thundernet8/YouzanPayPortal)
 [![GitHub license](https://img.shields.io/github/license/thundernet8/YouzanPayPortal.svg)](https://github.com/thundernet8/YouzanPayPortal/blob/master/LICENSE)
 [![code style: prettier](https://img.shields.io/badge/code_style-prettier-ff69b4.svg?style=flat-square)](https://github.com/prettier/prettier)
@@ -34,7 +30,7 @@
 
 * 创建[有赞微小店](https://h5.youzan.com/v2/index/wxdpc) 并扫码下载相应 APP 便于后续管理资金，注意这个小店在有赞后台看不到，只有 APP 可见
 
-* 应用授权-有赞云控制台创建自用型应用并授权刚创建的店铺，在[推送服务]设置中设置推送网址*http://www.example.com/api/status* , 同时勾选下方的交易消息选项。
+* 应用授权-有赞云控制台创建自用型应用并授权刚创建的店铺，在[推送服务]设置中设置推送网址*http://www.example.com/notice* , 同时勾选下方的交易消息选项。
 
 
 ## 项目配置
